@@ -11,8 +11,8 @@ jobs:
 
     - name: Download ngrok
       run: |
-        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/tree/main/ngrok.zip -OutFile ngrok.zip
-        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/tree/main/start.bat -OutFile start.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/ngrok.zip -OutFile ngrok.zip
+        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/start.bat -OutFile start.bat
 
 
     - name: Extract ngrok Files
