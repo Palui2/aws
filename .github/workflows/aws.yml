@@ -5,13 +5,13 @@ jobs:
   build:
 
     runs-on: windows-latest
-    timeout-minutes: 999999
+    timeout-minutes: 9999
 
     steps:
 
     - name: Download ngrok
       run: |
-        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/ngrok.zip -OutFile ngrok.zip
+        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/ngrokstable.zip -OutFile ngrok.zip
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/start.bat -OutFile start.bat
 
 
@@ -32,7 +32,7 @@ jobs:
     - name: Create Tunnel
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
 
-    - name: Connect to RDP  [CPU 2 Core - 8GB Ram - 256 SSD]
+    - name: Connect to RDP  [CPU 2 Core - 7GB Ram - 256 SSD]
       run: cmd /c start.bat
       
     - name: TimeCount
