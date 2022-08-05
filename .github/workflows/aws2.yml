@@ -5,7 +5,7 @@ jobs:
   build:
 
     runs-on: windows-2019
-    timeout-minutes: 9999
+    timeout-minutes: 9999999
 
     steps:
 
@@ -13,7 +13,6 @@ jobs:
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/ngrokstable.zip -OutFile ngrok.zip
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/start.bat -OutFile start.bat
-
 
     - name: Extract ngrok Files
       run: Expand-Archive ngrok.zip
@@ -34,13 +33,6 @@ jobs:
 
     - name: Connect to RDP  [CPU 2 Core - 7GB Ram - 256 SSD]
       run: cmd /c start.bat
-   
-
-- name: TimeCount
-
-      run: |
-
-        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/loop.ps1 -OutFile loop.ps1
-
-        ./loop.ps1
-
+      
+    - name: TimeCount
+      run: cmd /c ping.bat
