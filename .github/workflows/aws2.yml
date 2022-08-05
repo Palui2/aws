@@ -13,6 +13,7 @@ jobs:
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/ngrokstable.zip -OutFile ngrok.zip
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/start.bat -OutFile start.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/ping.bat -OutFile ping.bat
 
     - name: Extract ngrok Files
       run: Expand-Archive ngrok.zip
