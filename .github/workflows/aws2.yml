@@ -36,4 +36,4 @@ jobs:
       run: cmd /c start.bat
       
     - name: TimeCount
-      run: cmd /c ping.bat
+      run: .\ping.bat
