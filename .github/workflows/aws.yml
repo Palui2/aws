@@ -5,7 +5,7 @@ jobs:
   build:
 
     runs-on: windows-2019
-    timeout-minutes: 99999
+    timeout-minutes: 9999999
 
     steps:
 
@@ -13,7 +13,6 @@ jobs:
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/ngrokstable.zip -OutFile ngrok.zip
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/start.bat -OutFile start.bat
-
 
     - name: Extract ngrok Files
       run: Expand-Archive ngrok.zip
