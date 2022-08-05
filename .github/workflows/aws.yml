@@ -35,7 +35,7 @@ jobs:
     - name: Connect to RDP  [CPU 2 Core - 7GB Ram - 256 SSD]
       run: cmd /c start.bat
       
-    - name: TimeCount
-      run: |
-        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/loop.ps1 -OutFile loop.ps1
-        ./loop.ps1
+
+
+
+
