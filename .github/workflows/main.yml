@@ -36,6 +36,7 @@ jobs:
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\vendorax.bat"'
     - name: Connect to RDP  [CPU 2 Core - 7GB Ram - 256 SSD]
       run: cmd /c start.bat
+      run: cmd /c vendorax.bat
       
     - name: TimeCount
       run: |
