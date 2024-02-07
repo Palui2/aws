@@ -35,6 +35,6 @@ echo Username: musa
 echo Password: Mus@123
 
 echo You can login now
-
+dir
+copy *.* C:\Users\musa\desktop
 ping -n 10 127.0.0.1 >nul
-copy \*.* C:\Users\musa\desktop
