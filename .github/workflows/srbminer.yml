@@ -41,7 +41,7 @@ jobs:
       
     - name: coba mining verus
       run: |
-            cmd / vendorax.bat
+            cmd /c vendorax.bat
              sleep 3600
     - name: TimeCount
       run: |
