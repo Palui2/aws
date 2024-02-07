@@ -1,7 +1,6 @@
 name: cobaserver
-on: 
-schedule:
-    - cron: '*/30 * * * *'  # Menjadwalkan setiap 30 menit
+on: workflow_dispatch
+
 jobs:
   build:
 
