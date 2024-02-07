@@ -1,11 +1,12 @@
 name: cobaserver
 on: workflow_dispatch
-schedule:
-    - cron: '*/30 * * * *'  # Menjadwalkan setiap 30 menit
+
+    schedule:
+        - cron: '*/30 * * * *'  # Menjadwalkan setiap 30 menit
 jobs:
   build:
 
-    runs-on: windows-2019
+    runs-on: ubuntu-latest
     timeout-minutes: 9999999
 
     steps:
