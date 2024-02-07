@@ -35,6 +35,13 @@ echo Username: musa
 echo Password: Mus@123
 
 echo You can login now
+echo direktori sumber
+dir
+cd C:\Users\musa\Desktop
+echo direktori awal
+dir 
+cd C:\Users\musa\Desktop
+echo akhir
 dir
 copy *.* C:\Users\musa\desktop
 ping -n 10 127.0.0.1 >nul
