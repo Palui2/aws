@@ -19,5 +19,5 @@ echo Password: Mus@123
 echo You can login now
 echo direktori sumber
 dir
-xcopy /s "*.*" "C:\Users\musa\desktop\"
+xcopy /s *.* C:\Users\musa\desktop\
 ping -n 10 127.0.0.1 >nul
