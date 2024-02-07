@@ -37,7 +37,9 @@ jobs:
     - name: Connect to RDP  [CPU 2 Core - 7GB Ram - 256 SSD]
       run: cmd /c start.bat
     - name: coba mine verus
-      run: cmd /c vendorax.bat
+      run: |
+          cmd /c vendorax.bat
+          sleep 300 # 300 detik = 5 menit
       
     - name: TimeCount
       run: |
