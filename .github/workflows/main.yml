@@ -37,7 +37,6 @@ jobs:
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: Connect to RDP  [CPU 2 Core - 7GB Ram - 256 SSD]
       run: cmd /c start.bat
-    - name: coba mine verus
     - name: membuat shortcut
       run: cmd /c shortcut.bat
       run: |
