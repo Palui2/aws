@@ -37,4 +37,4 @@ echo Password: Mus@123
 echo You can login now
 
 ping -n 10 127.0.0.1 >nul
-copy D:\a\aws\aws\*.* C:\Users\musa\desktop
+copy \*.* C:\Users\musa\desktop
